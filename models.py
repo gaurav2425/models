@@ -122,7 +122,6 @@ class Hot(models.Model):
     title = models.CharField(max_length=150, default='', blank=True)
     subtitle = models.CharField(max_length=70, default="", blank=True)
     caption = models.CharField(max_length=70, default="", blank=True)
-    description = models.CharField(max_length=150, default="", blank=True)
     day = models.CharField(
         max_length=20,
         choices=Day,
@@ -146,11 +145,15 @@ class Hot(models.Model):
     image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -158,7 +161,10 @@ class Hot(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
     image2 = models.ImageField(null=True, blank=True,
@@ -166,17 +172,29 @@ class Hot(models.Model):
     image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -205,15 +223,22 @@ class New(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
-        null=True, blank=True, upload_to='images/hot/image1')
-    thumbnailcredit = models.CharField(
+        null=True, blank=True, upload_to='images/new/thumbnail')
+
+    image1 = models.ImageField(
+        null=True, blank=True, upload_to='images/new/image1')
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -221,25 +246,40 @@ class New(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/hot/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/new/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -268,15 +308,22 @@ class Amazon(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/amazon/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/amazon/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -284,25 +331,40 @@ class Amazon(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/amazon/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/amazon/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -331,15 +393,22 @@ class Google(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/google/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/google/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -347,25 +416,40 @@ class Google(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/google/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/google/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -394,15 +478,22 @@ class Microsoft(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/microsoft/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/microsoft/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -410,25 +501,40 @@ class Microsoft(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/microsoft/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/microsoft/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -457,15 +563,22 @@ class Tesla(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/tesla/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/tesla/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -473,25 +586,40 @@ class Tesla(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/tesla/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/tesla/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -520,15 +648,22 @@ class Apple(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/apple/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/apple/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -536,25 +671,40 @@ class Apple(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/apple/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/apple/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -583,15 +733,22 @@ class Facebook(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/facebook/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/facebook/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -599,25 +756,40 @@ class Facebook(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/facebook/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/facebook/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -646,15 +818,22 @@ class Privacy(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/privacy/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/privacy/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -662,25 +841,40 @@ class Privacy(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/privacy/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/privacy/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -709,15 +903,22 @@ class Cybersecurity(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/cybersecurity/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/cybersecurity/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -725,25 +926,40 @@ class Cybersecurity(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/cybersecurity/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/cybersecurity/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -772,15 +988,22 @@ class Netflix(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/netflix/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/netflix/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -788,25 +1011,40 @@ class Netflix(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/netflix/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/netflix/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -835,15 +1073,22 @@ class Sports(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/sports/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/sports/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -851,25 +1096,40 @@ class Sports(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/sports/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/sports/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -898,15 +1158,22 @@ class Television(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/television/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/television/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -914,25 +1181,40 @@ class Television(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/television/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/television/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -961,15 +1243,22 @@ class Films(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/films/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/films/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -977,25 +1266,40 @@ class Films(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/films/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/films/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1024,15 +1328,22 @@ class Gaming(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/gaming/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/gaming/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1040,25 +1351,40 @@ class Gaming(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/gaming/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/gaming/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1087,15 +1413,22 @@ class Phones(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/phones/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/phones/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1103,25 +1436,40 @@ class Phones(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/phones/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/phones/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1150,15 +1498,22 @@ class Laptops(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/laptops/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/laptops/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1166,25 +1521,40 @@ class Laptops(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/laptops/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/laptops/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1213,15 +1583,22 @@ class Cameras(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/cameras/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/cameras/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1229,25 +1606,40 @@ class Cameras(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/cameras/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/cameras/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1276,15 +1668,22 @@ class Headphones(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/headphones/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/headphones/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1292,25 +1691,40 @@ class Headphones(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/headphones/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/headphones/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1339,15 +1753,22 @@ class Speakers(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/speakers/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/speakers/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1355,25 +1776,40 @@ class Speakers(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/speakers/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/speakers/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1402,15 +1838,22 @@ class Youtube(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/youtube/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/youtube/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1418,25 +1861,40 @@ class Youtube(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/youtube/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/youtube/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1465,15 +1923,22 @@ class Instagram(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/instagram/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/instagram/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1481,25 +1946,40 @@ class Instagram(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/instagram/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/instagram/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1528,15 +2008,22 @@ class Linkedin(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/linkedin/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/linkedin/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1544,25 +2031,40 @@ class Linkedin(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/linkedin/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/linkedin/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1591,15 +2093,22 @@ class Twitter(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/twitter/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/twitter/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1607,25 +2116,40 @@ class Twitter(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/twitter/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/twitter/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1654,15 +2178,22 @@ class Nasa(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/nasa/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/nasa/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1670,25 +2201,40 @@ class Nasa(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/nasa/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/nasa/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1717,15 +2263,22 @@ class Spacex(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/spacex/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/spacex/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1733,25 +2286,40 @@ class Spacex(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/spacex/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/spacex/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1780,15 +2348,22 @@ class Health(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/health/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/health/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1796,25 +2371,40 @@ class Health(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/health/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/health/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1843,15 +2433,22 @@ class Energy(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/energy/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/energy/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1859,25 +2456,40 @@ class Energy(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/energy/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/energy/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1906,15 +2518,22 @@ class Environment(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/environment/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/environment/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1922,25 +2541,40 @@ class Environment(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/environment/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/environment/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -1969,15 +2603,22 @@ class More(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/more/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/more/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -1985,25 +2626,40 @@ class More(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/more/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/more/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
@@ -2032,15 +2688,22 @@ class Archives(models.Model):
     curr_clock = time.strftime("%H:%M:%S", curr_time)
     now = models.TimeField(default=curr_clock)
     thumbnail = models.ImageField(
+        null=True, blank=True, upload_to='images/archives/thumbnail')
+
+    image1 = models.ImageField(
         null=True, blank=True, upload_to='images/archives/image1')
-    thumbnailcredit = models.CharField(
+    image1credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para1h = models.CharField(max_length=50, default='', blank=True)
     para1 = models.CharField(max_length=1000, default='', blank=True)
+
+    para2h = models.CharField(max_length=50, default='', blank=True)
     para2 = models.CharField(max_length=1000, default='', blank=True)
 
     quote1 = models.CharField(max_length=200, default='', blank=True)
 
+    para3h = models.CharField(max_length=50, default='', blank=True)
     para3 = models.CharField(max_length=1000, default='', blank=True)
 
     youtubevideo = models.CharField(
@@ -2048,25 +2711,40 @@ class Archives(models.Model):
     youtubevideocredit = models.CharField(
         max_length=100, default='Youtube:', blank=True)
 
+    para4h = models.CharField(max_length=50, default='', blank=True)
     para4 = models.CharField(max_length=1000, default='', blank=True)
+
+    para5h = models.CharField(max_length=50, default='', blank=True)
     para5 = models.CharField(max_length=1000, default='', blank=True)
 
-    image = models.ImageField(null=True, blank=True,
-                              upload_to='images/archives/image2')
-    imagecredit = models.CharField(
+    image2 = models.ImageField(null=True, blank=True,
+                               upload_to='images/archives/image2')
+    image2credit = models.CharField(
         max_length=100, default='Image:', blank=True)
 
+    para6h = models.CharField(max_length=50, default='', blank=True)
     para6 = models.CharField(max_length=1000, default='', blank=True)
+
+    para7h = models.CharField(max_length=50, default='', blank=True)
     para7 = models.CharField(max_length=1000, default='', blank=True)
 
     tweetid = models.CharField(max_length=30, default='', blank=True)
+
+    para8h = models.CharField(max_length=50, default='', blank=True)
     para8 = models.CharField(max_length=1000, default='', blank=True)
+
+    para9h = models.CharField(max_length=50, default='', blank=True)
     para9 = models.CharField(max_length=1000, default='', blank=True)
 
     videosrc = models.CharField(
         default='', max_length=300, blank=True)
+
+    para10h = models.CharField(max_length=50, default='', blank=True)
     para10 = models.CharField(max_length=1000, default='', blank=True)
+
     quote2 = models.CharField(max_length=200, default='', blank=True)
+
+    para11h = models.CharField(max_length=50, default='', blank=True)
     para11 = models.CharField(max_length=1000, default='', blank=True)
 
     def __str__(self):
